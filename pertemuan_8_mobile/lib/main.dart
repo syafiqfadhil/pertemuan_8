@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pertemuan_8_mobile/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:pertemuan_8_mobile/widgets/auth_wrapper.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,9 +24,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: const Scaffold(
-        body: Center(child: Text('Memuat...')),
-      ),
+      home: const AuthWrapper(),
     );
   }
 }
