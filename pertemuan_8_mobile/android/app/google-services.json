@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "560759899906",
+    "project_id": "projectfirebase2026-11831",
+    "storage_bucket": "projectfirebase2026-11831.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560759899906:android:1832df50c05128bf95641b",
+        "android_client_info": {
+          "package_name": "com.example.pertemuan_8_mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw30mHjvVHfiuoIXcVHHFrso8Ya-LVHf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:560759899906:android:7f1fbc08fde12d3d95641b",
+        "android_client_info": {
+          "package_name": "com.myFB2026.myApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw30mHjvVHfiuoIXcVHHFrso8Ya-LVHf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
