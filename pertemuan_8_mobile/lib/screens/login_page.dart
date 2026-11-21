@@ -16,7 +16,21 @@ class _LoginPageState extends State<LoginPage> {
         centerTitle: true,
       ),
       body: const Center(
-        child: Text('Form Login'),
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Icon(Icons.lock_person, size: 72, color: Colors.blue),
+              SizedBox(height: 16),
+              Text(
+                'Masuk dengan Akun Firebase',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
