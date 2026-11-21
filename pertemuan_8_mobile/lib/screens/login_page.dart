@@ -57,6 +57,13 @@ class _LoginPageState extends State<LoginPage> {
                   prefixIcon: Icon(Icons.lock_outline),
                   border: OutlineInputBorder(),
                 ),
+              ),
+              const SizedBox(height: 24),
+              SizedBox(
+                height: 48,
+                child: ElevatedButton(
+                  onPressed: () {}, 
+                  child: const Text('Masuk')),
               )
             ],
           ),
