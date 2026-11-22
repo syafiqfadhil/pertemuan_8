@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,6 +12,8 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  bool _isLoading = false;
   bool _obsecurePassword = true;
 
   @override
@@ -20,8 +23,33 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  void _login() {
-    if(!_formKey.currentState!.validate()) return;
+  Future<void> _login() async {
+    if (!_formKey.currentState!.validate()) return;
+
+    setState(() => _isLoading = true);
+
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _emailController.text.trim(), 
+        password: _passwordController.text.trim(),
+        );
+    } on FirebaseAuthException catch (e) {
+      if (!mounted) return;
+      String message = 'Login gagal. Periksa email dan password';
+      if(e.code == 'invalid-credential' || e.code == 'user-not-found') {
+        message = 'Email atau password salah / belum terdaftar di Firebase';
+      } else if (e.code == 'wrong-passord'){
+        message = 'Password yang dimasukkan salah';
+      } else if (e.code == 'invalid-email'){
+        message = 'Format email tidak valid';
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(message),backgroundColor: Colors.red),
+      );
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
   }
 
   @override
@@ -99,8 +127,14 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 48,
                   child: ElevatedButton(
-                    onPressed: _login,
-                    child: const Text('Masuk'),
+                    onPressed: _isLoading ? null : _login,
+                    child: _isLoading
+                    ? const SizedBox(
+                      height: 22,
+                      width: 22,
+                      child: CircularProgressIndicator(strokeWidth: 2,),
+                    )
+                    : const Text('Masuk'),
                   ),
                 ),
               ],
