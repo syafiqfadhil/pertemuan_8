@@ -13,7 +13,7 @@ Aplikasi mobile berbasis **Flutter** yang terintegrasi dengan **Firebase Authent
 
 | Halaman Login | Halaman Informasi Akun |
 | :---: | :---: |
-| <img src="screenshot/login_page.png" width="250" alt="Halaman Login"> | <img src="screenshot/user_info_screen.png" width="250" alt="Halaman Informasi Akun"> |
+| <img src="screenshot/login_page.png" width="250" alt="Halaman Login"> | <img src="screenshot/user_info_page.png" width="250" alt="Halaman Informasi Akun"> |
 
 ---
 
@@ -33,7 +33,7 @@ Aplikasi mobile berbasis **Flutter** yang terintegrasi dengan **Firebase Authent
 ---
 
 ## Struktur Folder
-```text
+```text```
 lib/
 ├── firebase_options.dart
 ├── main.dart
