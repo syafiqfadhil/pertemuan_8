@@ -13,7 +13,7 @@ Aplikasi mobile berbasis **Flutter** yang terintegrasi dengan **Firebase Authent
 
 | Halaman Login | Halaman Informasi Akun |
 | :---: | :---: |
-| ![Halaman Login](screenshot/login_page.png) | ![Halaman Informasi Akun](screenshot/user_info_page.png) |
+| ![Halaman Login](pertemuan_8_mobile/screenshot/login_page.png) | ![Halaman Informasi Akun](pertemuan_8_mobile/screenshot/user_info_page.png) |
 
 ---
 
