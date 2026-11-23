@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:pertemuan_8_mobile/screens/login_page.dart';
+import 'package:pertemuan_8_mobile/screens/user_info_screen.dart';
 
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({super.key});
@@ -16,14 +18,10 @@ class AuthWrapper extends StatelessWidget {
         }
 
         if (snapshot.hasData){
-          return const Scaffold(
-            body: Center(child: Text('Halaman Info User')),
-          );
+          return const UserInfoScreen();
         }
 
-        return const Scaffold(
-          body: Center(child: Text('Halaman Login'),),
-        );
+        return const LoginPage();
       }
       );
   }
