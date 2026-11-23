@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 class UserInfoScreen extends StatelessWidget {
   const UserInfoScreen({super.key});
 
+  Future<void> _logout() async {
+    await FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     final User? user = FirebaseAuth.instance.currentUser;
@@ -11,6 +15,13 @@ class UserInfoScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Informasi Akun Firebase'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            tooltip: 'Logout',
+            onPressed: _logout, 
+            icon: const Icon(Icons.logout)
+            )
+        ],
       ),
       body:  Padding(
         padding: EdgeInsets.all(16),
@@ -95,7 +106,13 @@ class UserInfoScreen extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+            const Spacer(),
+            OutlinedButton.icon(
+              icon: const Icon(Icons.logout),
+              onPressed: _logout,
+              label: const Text('Logout'),
+            ),
           ],
         ),
         ),
